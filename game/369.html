@@ -60,11 +60,11 @@
             result += i + " ";
           }
           if (number % 10 === 0) {
-            result += "\n";
+            result += "<br/>";
           }
         }
 
-        document.getElementById("resultOutput").textContent = result;
+        document.getElementById("resultOutput").textContent = result.trim();
       }
     </script>
   </head>
