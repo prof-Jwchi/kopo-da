@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3, 6, 9 게임</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      label {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+
+      input {
+        padding: 5px;
+        font-size: 16px;
+        width: 100px;
+        text-align: center;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #resultOutput {
+        margin-top: 20px;
+        font-size: 20px;
+      }
+    </style>
+    <script>
+      function game369() {
+        const number = parseInt(document.getElementById("numberInput").value);
+        let result = "";
+
+        for (let i = 1; i <= number; i++) {
+          if (
+            String(i).includes("3") ||
+            String(i).includes("6") ||
+            String(i).includes("9")
+          ) {
+            const count = (String(i).match(/[369]/g) || []).length;
+            result += "짝".repeat(count) + " ";
+          } else {
+            result += i + " ";
+          }
+        }
+
+        document.getElementById("resultOutput").textContent = result.trim();
+      }
+    </script>
+  </head>
+  <body>
+    <h1>3, 6, 9 게임</h1>
+    <label for="numberInput">숫자 입력:</label>
+    <input type="number" id="numberInput" />
+    <br />
+    <button onclick="game369()">게임 시작</button>
+    <br />
+    <p id="resultOutput"></p>
+  </body>
+</html>
 
