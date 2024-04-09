@@ -1,0 +1,17 @@
+name: Notify on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify on Push
+        uses: distributhor/webhook-action@v1
+        with:
+          url: ${{ secrets.WEBHOOK_URL }}
+          method: POST
+          body: '{ "text": "변동사항이 있습니다!" }'
