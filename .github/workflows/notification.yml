@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: M365 Teams alert
-        uses: microsoft/teams-notification@v1
+        uses: kopo-da
         with:
           webhook_url: https://o365kopo.webhook.office.com/webhookb2/bb297453-40c6-4dc2-b9bd-fda07688a327@ad21525c-fc0f-4dbc-a403-67ce00add0e4/IncomingWebhook/b6df325d5d5c45549489bd21465a8323/d65d978b-6555-40a1-84d0-6beb009925d8
           message: |
